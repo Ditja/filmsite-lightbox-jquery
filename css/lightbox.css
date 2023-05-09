@@ -1,0 +1,46 @@
+.lightbox {
+    background-color: rgba(0, 0, 0, 1);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    cursor: pointer;
+    display: none;
+}
+
+.lightbox__content {
+    background-color: #000;
+    max-width: 72vw;
+    margin: 10vh auto;
+    display: grid;
+    grid-template: repeat(2, auto)/repeat(3, auto);
+    align-items: center;
+}
+
+.lightbox__photo {
+    grid-area: 1/1/2/-1;
+    padding: 0.8em 0.8em 0;
+}
+
+.lightbox__leftarrow,
+.lightbox__rightarrow {
+    grid-area: 1/1/2/-1;
+    font-size: 2.5em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.lightbox__rightarrow {
+    justify-self: end;
+    margin-right: 1em;
+}
+
+.lightbox__leftarrow {
+    margin-left: 1em;
+}
+
+.lightbox__caption {
+    grid-area: 2/1/3/-1;
+    text-align: center;
+    padding: 0.5em 0;
+    display: block;
+}

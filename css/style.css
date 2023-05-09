@@ -1,0 +1,566 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FFF;
+    font-size: 1.25em;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#home-img {
+    width: 100vw;
+    height: 100vh;
+}
+
+#home-img img {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+#gallery img#logo,
+#home img#logo,
+#cast img#logo {
+    display: none;
+}
+
+img#logo {
+    display: block;
+    max-width: 640px;
+    margin: 0 auto;
+    padding-top: 8em;
+}
+
+
+/* baggrundsbillede til alle sider undtagen home */
+
+#cast,
+#gallery,
+#synopsis {
+    background-image: url("../images/bg-asphalt.jpg");
+    background-size: 100vw;
+}
+
+#wrapper {
+    background-color: rgba(77, 77, 77, 0.6);
+    overflow: hidden;
+}
+
+#totop {
+    display: none;
+}
+
+#wrapper,
+header,
+nav,
+nav ul,
+main,
+section.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#wrapper,
+nav {
+    max-width: 1440px;
+}
+
+#home nav {
+    max-width: 100%;
+}
+
+nav ul,
+main {
+    max-width: 1170px;
+}
+
+section.content {
+    max-width: 1020px;
+    justify-content: space-between;
+}
+
+main,
+nav ul,
+footer,
+section.content,
+nav ul li:last-child ul {
+    display: flex;
+}
+
+main {
+    flex-direction: column;
+    padding: 1em;
+}
+
+#gallery main {
+    padding: 9em 0 4em;
+}
+
+#cast main {
+    padding: 7em 0 4em;
+}
+
+
+/* TYPOGRAFI */
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+h1,
+p {
+    margin-bottom: 1.5em;
+}
+
+h2 {
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+
+/* styling til navigation */
+
+nav ul {
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav ul li {
+    line-height: 5.375em;
+    min-width: 18%;
+}
+
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+nav ul li:last-child ul li {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #E5E5E5;
+    font-weight: 300;
+    display: block;
+}
+
+nav ul li a i {
+    font-size: 0;
+}
+
+nav ul li a span.show-hide,
+nav ul li:last-child ul li a i,
+nav ul li span.show-hide {
+    font-size: 125%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+#home footer {
+    bottom: 0;
+    left: 0;
+}
+
+nav,
+#home footer {
+    position: fixed;
+    z-index: 3;
+}
+
+nav,
+#home footer,
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer {
+    justify-content: center;
+    width: 100%;
+}
+
+footer div {
+    width: 100px;
+    padding: 1em;
+}
+
+
+/* generel styling til section.content - opsætning af indhold på cast og synopsis */
+
+section.content {
+    padding: 3em 0;
+}
+
+section.content:nth-child(odd) {
+    flex-direction: row;
+}
+
+section.content:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+section.content:nth-child(odd) div:first-child,
+section.content:nth-child(even) div:first-child {
+    flex: 5;
+}
+
+section.content:nth-child(odd) div:last-child,
+section.content:nth-child(even) div:last-child {
+    flex: 7;
+}
+
+section.content:nth-child(odd) div:first-child,
+section.content:nth-child(even) div:last-child {
+    padding-right: 2em;
+}
+
+section.content:nth-child(odd) div:last-child,
+section.content:nth-child(even) div:first-child {
+    padding-left: 2em;
+}
+
+section.content div div.xtra-txt {
+    padding: 0;
+    margin: 0;
+}
+
+section.content div p.knap {
+    cursor: pointer;
+    color: cadetblue;
+}
+
+section.content table,
+#synopsis section.content div:last-of-type h3 {
+    font-size: 20px;
+}
+
+section.content table th,
+section.content table td {
+    text-align: left;
+    font-weight: 400;
+    padding: 2em 0 0 0;
+}
+
+section.content table th {
+    flex: 2;
+    padding-right: 2em;
+}
+
+section.content table td {
+    flex: 2;
+    padding-left: 0;
+}
+
+#synopsis section.content {
+    display: grid;
+    place-self: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4em;
+}
+
+#synopsis section.content div:first-of-type {
+    grid-area: 1/1/3/4;
+}
+
+#synopsis section.content div:last-of-type {
+    padding-left: 0;
+    grid-area: 1/4/2/6;
+}
+
+
+/* div containing all images in gallery */
+
+#filmsite_gallery {
+    place-self: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1em;
+    padding: 1em;
+}
+
+#filmsite_gallery img {
+    cursor: pointer;
+}
+
+#filmsite_gallery figure {
+    position: relative;
+}
+
+#filmsite_gallery figure figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 0.3em;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9em;
+}
+
+#filmsite_gallery figure:hover figcaption {
+    display: block;
+}
+
+
+/* main og billede-menu fra cast-siden er skjult på forsiden */
+
+#home main,
+#filmsite_gallery figure figcaption,
+#cast-img-menu {
+    display: none;
+}
+
+@media only screen and (max-width:960px) {
+    #wrapper {
+        max-width: 960px;
+        background-size: cover;
+    }
+    #home-img {
+        height: auto;
+    }
+    #gallery #lightbox_content {
+        max-width: 96%;
+        margin: 20vh 1rem;
+        padding-bottom: 6em;
+    }
+    img#logo,
+    #synopsis img#logo {
+        display: block;
+        padding: 4em 0 0 0;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    nav {
+        bottom: 0;
+        left: 0;
+    }
+    nav ul {
+        width: 100%;
+        flex-wrap: wrap;
+        align-content: center;
+        padding: 0;
+    }
+    nav ul li:last-child {
+        width: 100%;
+        padding: 0;
+    }
+    nav ul li,
+    nav ul li:last-child ul li {
+        width: 20%;
+        line-height: 3em;
+    }
+    nav ul li:last-child ul {
+        padding: 0;
+        position: fixed;
+        top: 0;
+        justify-content: space-around;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    nav ul li:last-child ul li {
+        flex: 1;
+    }
+    nav ul li:last-child ul li {
+        width: 25%;
+    }
+    nav ul li a {
+        text-align: center;
+        color: #E5E5E5;
+    }
+    nav ul li a i,
+    nav ul li:last-child ul li a i {
+        font-size: 2em;
+        line-height: 1em;
+        margin-top: 0.5em;
+    }
+    nav ul li a span.show-hide,
+    nav ul li span.show-hide {
+        font-size: 0;
+    }
+    nav ul li a:hover {
+        border-bottom: 0;
+    }
+    #home main,
+    #cast main,
+    #gallery main,
+    #synopsis main {
+        padding: 5em 1em;
+        position: relative;
+    }
+    #totop {
+        position: fixed;
+        right: 0.5em;
+        bottom: 3em;
+        font-size: 1.4em;
+        display: inline-block;
+    }
+    #totop a {
+        color: #000;
+        text-decoration: none;
+    }
+    #synopsis section.content {
+        display: flex;
+    }
+    section.content {
+        margin-top: 0;
+        max-width: 520px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    section.content img {
+        max-width: 520px;
+        text-align: center;
+    }
+    section.content table {
+        margin: 0 auto;
+    }
+    section.content,
+    section.content:nth-child(odd),
+    section.content:nth-child(even) {
+        flex-direction: column;
+    }
+    #synopsis section.content:nth-child(odd) div:first-child,
+    #synopsis section.content:nth-child(even) div:last-child,
+    #synopsis section.content:nth-child(odd) div:last-child,
+    #synopsis section.content:nth-child(even) div:first-child,
+    section.content:nth-child(odd) div:first-child,
+    section.content:nth-child(even) div:last-child,
+    section.content:nth-child(odd) div:last-child,
+    section.content:nth-child(even) div:first-child {
+        flex: 1;
+        padding: 0;
+        margin: 0 0 2em 0;
+    }
+    section.content div p.knap {
+        display: block;
+    }
+    #filmsite_gallery figure figcaption {
+        display: block;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        padding: 0.3em;
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0.9em;
+    }
+    /* billede-menu i toppen af cast-siden, når man er på en tablet */
+    #cast-img-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        max-width: 768px;
+        margin: 0 auto;
+        gap: 1em;
+        padding: 6em 1em 1em 1em;
+    }
+    #cast-img-menu a {
+        text-decoration: none;
+        color: #E5E5E5;
+        font-weight: 400;
+        margin-bottom: 1em;
+    }
+    #cast-img-menu img {
+        width: 100%;
+    }
+    #paul,
+    #vin,
+    #jordana,
+    #michelle,
+    #matt,
+    #chad {
+        padding: 6em 0 2em;
+    }
+    footer {
+        display: none;
+    }
+    /* video på forside */
+    #home main {
+        display: block;
+    }
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 35px;
+        height: 0;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+
+/************ MEDIA QUERIES ***************/
+
+@media only screen and (max-width:420px) {
+    #wrapper {
+        max-width: 420px;
+        min-width: 280px;
+    }
+    #cast-img-menu {
+        display: none;
+    }
+    img#logo,
+    #synopsis img#logo {
+        padding: 4em 0 0 0;
+    }
+    nav ul li a i,
+    nav ul li:last-child ul li a i {
+        font-size: 1.6em;
+        line-height: 1;
+    }
+    section.content {
+        max-width: 420px;
+    }
+    section.content table,
+    #synopsis section.content div:last-child h3 {
+        display: flex;
+        justify-content: space-between;
+        max-width: 420px;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+    #paul,
+    #vin,
+    #jordana,
+    #michelle,
+    #matt,
+    #chad {
+        padding: 2em 0;
+        margin: 0 auto;
+    }
+}
